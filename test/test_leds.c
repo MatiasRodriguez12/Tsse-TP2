@@ -1,4 +1,3 @@
-// Apago un led, consulto el estado y tiene que estar apagado.
 // Con todos los leds apagados, prendo todos los leds y verifico que se encienden.   //funcion ledTurnOnAll
 // Con todos los leds prendidos, apagado todos los leds y verifico que se apagan.
 
@@ -57,4 +56,13 @@ void test_prender_y_consultar_estado_led(void){
     ledsTurnOnSingle(5);
     bool state_led=isLedTurnOn(5);
     TEST_ASSERT_TRUE(state_led);
+}
+
+// Apago un led, consulto el estado y tiene que estar apagado.
+void test_apagar_y_consultar_estado_led(void){
+    
+    ledsTurnOnSingle(5);
+    ledsTurnOffSingle(5);
+    bool state_led=isLedTurnOn(5);
+    TEST_ASSERT_FALSE(state_led);
 }
