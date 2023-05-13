@@ -38,6 +38,6 @@ bool isLedTurnOn(int led){
     return state;
 }
 
-void ledTurnOnAll(void){
+void ledsTurnOnAll(void){
     *puerto_virtual=ALL_LEDS_ON;
 }

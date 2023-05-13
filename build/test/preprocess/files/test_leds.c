@@ -10,12 +10,6 @@
 
 
 
-
-
-
-
-
-
 static uint16_t puerto_virtual;
 
 
@@ -48,7 +42,7 @@ void test_todos_los_leds_inician_apagados(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(22), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -66,7 +60,7 @@ void test_prendo_un_led(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(32), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -86,7 +80,7 @@ void test_prender_y_apagar_led(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(40), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(37), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -108,7 +102,7 @@ void test_prender_y_apagar_varios_leds(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(49), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(46), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -128,7 +122,7 @@ void test_prender_y_consultar_estado_led(void){
 
         state_led=isLedTurnOn(5);
 
-    do {if ((state_led)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(57)));}} while(0);
+    do {if ((state_led)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(54)));}} while(0);
 
 }
 
@@ -150,7 +144,7 @@ void test_apagar_y_consultar_estado_led(void){
 
         state_led=isLedTurnOn(5);
 
-    do {if (!(state_led)) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(66)));}} while(0);
+    do {if (!(state_led)) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(63)));}} while(0);
 
 }
 
@@ -160,12 +154,12 @@ void test_apagar_y_consultar_estado_led(void){
 
 void test_encender_todos_los_leds(void){
 
-    ledTurnOnAll();
+    ledsTurnOnAll();
 
     UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFFF)), (UNITY_INT)(UNITY_INT16)((puerto_virtual)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(72), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(69), UNITY_DISPLAY_STYLE_HEX16);
 
 }
