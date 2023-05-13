@@ -1,7 +1,6 @@
-// Prendo un led, consulto el estado y tiene que estar prendido. funcion ledTurnOnAll
 // Apago un led, consulto el estado y tiene que estar apagado.
-// Con todos los leds apagados, prendo todos los leds y verifico que se encienden. funcion isLedTurnOn
-// Con todos los leds prendidor, apagado todos los leds y verifico que se apagan.
+// Con todos los leds apagados, prendo todos los leds y verifico que se encienden.   //funcion ledTurnOnAll
+// Con todos los leds prendidos, apagado todos los leds y verifico que se apagan.
 
 
 // Revisar los valores limites de los argumentos.
@@ -10,7 +9,7 @@
 
 #include "unity.h"
 #include "leds.h"
-#include <stdint.h>
+
 static uint16_t puerto_virtual;
 
 void setUp(void){
@@ -50,4 +49,12 @@ void test_prender_y_apagar_varios_leds(void){
     ledsTurnOffSingle(3);
     ledsTurnOffSingle(7);
     TEST_ASSERT_EQUAL_HEX16(0x0010,puerto_virtual);
+}
+
+// Prendo un led, consulto el estado y tiene que estar prendido.
+void test_prender_y_consultar_estado_led(void){
+    
+    ledsTurnOnSingle(5);
+    bool state_led=isLedTurnOn(5);
+    TEST_ASSERT_TRUE(state_led);
 }

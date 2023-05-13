@@ -14,6 +14,7 @@ extern void test_todos_los_leds_inician_apagados(void);
 extern void test_prendo_un_led(void);
 extern void test_prender_y_apagar_led(void);
 extern void test_prender_y_apagar_varios_leds(void);
+extern void test_prender_y_consultar_estado_led(void);
 
 
 /*=======Mock Management=====*/
@@ -78,10 +79,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 25);
-  run_test(test_prendo_un_led, "test_prendo_un_led", 32);
-  run_test(test_prender_y_apagar_led, "test_prender_y_apagar_led", 39);
-  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 47);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 24);
+  run_test(test_prendo_un_led, "test_prendo_un_led", 31);
+  run_test(test_prender_y_apagar_led, "test_prender_y_apagar_led", 38);
+  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 46);
+  run_test(test_prender_y_consultar_estado_led, "test_prender_y_consultar_estado_led", 55);
 
   return UnityEnd();
 }

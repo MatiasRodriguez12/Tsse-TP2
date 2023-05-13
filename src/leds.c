@@ -9,6 +9,10 @@ uint16_t indexToMask(uint8_t led){
     return(FIRST_BIT<<(led-INDEX_OFFSET));
 }
 
+uint16_t indexToMaskStateLed(uint8_t led){
+    return(FIRST_BIT<<(led-INDEX_OFFSET));
+}
+
 void ledsInit(uint16_t* direccion){
     puerto_virtual=direccion;
     *puerto_virtual=ALL_LEDS_OFF;
@@ -20,4 +24,15 @@ void ledsTurnOnSingle(int led){
 
 void ledsTurnOffSingle(int led){
     *puerto_virtual&=~indexToMask(led);
+}
+
+bool isLedTurnOn(int led){
+    bool state;
+    if ((FIRST_BIT & (*puerto_virtual>>(led-1)))==1){
+        state=true;
+    }
+    else{
+        state=false;
+    }
+    return state;
 }
