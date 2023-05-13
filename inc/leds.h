@@ -12,4 +12,6 @@ void ledsTurnOffSingle(int led);
 
 bool isLedTurnOn(int led);
 
+void ledTurnOnAll(void);
+
 #endif

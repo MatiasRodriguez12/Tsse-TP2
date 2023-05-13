@@ -2,6 +2,20 @@
 #include "/var/lib/gems/3.0.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 static uint16_t puerto_virtual;
 
 
@@ -34,7 +48,7 @@ void test_todos_los_leds_inician_apagados(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(26), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -52,7 +66,7 @@ void test_prendo_un_led(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(33), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(32), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -72,7 +86,7 @@ void test_prender_y_apagar_led(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(40), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -94,7 +108,7 @@ void test_prender_y_apagar_varios_leds(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(50), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(49), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -114,7 +128,7 @@ void test_prender_y_consultar_estado_led(void){
 
         state_led=isLedTurnOn(5);
 
-    do {if ((state_led)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(58)));}} while(0);
+    do {if ((state_led)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(57)));}} while(0);
 
 }
 
@@ -136,6 +150,22 @@ void test_apagar_y_consultar_estado_led(void){
 
         state_led=isLedTurnOn(5);
 
-    do {if (!(state_led)) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(67)));}} while(0);
+    do {if (!(state_led)) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(66)));}} while(0);
+
+}
+
+
+
+
+
+void test_encender_todos_los_leds(void){
+
+    ledTurnOnAll();
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFFF)), (UNITY_INT)(UNITY_INT16)((puerto_virtual)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(72), UNITY_DISPLAY_STYLE_HEX16);
 
 }

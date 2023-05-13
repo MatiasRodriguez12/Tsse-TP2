@@ -4,6 +4,7 @@ static uint16_t* puerto_virtual;
 #define INDEX_OFFSET 1
 #define FIRST_BIT 1
 #define ALL_LEDS_OFF 0x0000
+#define ALL_LEDS_ON 0xFFFF
 
 uint16_t indexToMask(uint8_t led){
     return(FIRST_BIT<<(led-INDEX_OFFSET));
@@ -35,4 +36,8 @@ bool isLedTurnOn(int led){
         state=false;
     }
     return state;
+}
+
+void ledTurnOnAll(void){
+    *puerto_virtual=ALL_LEDS_ON;
 }
