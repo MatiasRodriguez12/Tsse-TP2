@@ -14,4 +14,6 @@ bool isLedTurnOn(int led);
 
 void ledsTurnOnAll(void);
 
+void ledsTurnOffAll(void);
+
 #endif

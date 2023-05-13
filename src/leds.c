@@ -41,3 +41,7 @@ bool isLedTurnOn(int led){
 void ledsTurnOnAll(void){
     *puerto_virtual=ALL_LEDS_ON;
 }
+
+void ledsTurnOffAll(void){
+   *puerto_virtual=ALL_LEDS_OFF;
+}

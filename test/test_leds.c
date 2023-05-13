@@ -68,3 +68,10 @@ void test_encender_todos_los_leds(void){
     ledsTurnOnAll();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF,puerto_virtual);
 }
+
+// Con todos los leds prendidos, apagado todos los leds y verifico que se apagan.
+void test_apagar_todos_los_leds(void){
+    ledsTurnOnAll();
+    ledsTurnOffAll();
+    TEST_ASSERT_EQUAL_HEX16(0x0000,puerto_virtual);
+}

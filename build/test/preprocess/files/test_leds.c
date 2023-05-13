@@ -163,3 +163,21 @@ void test_encender_todos_los_leds(void){
    ), (UNITY_UINT)(69), UNITY_DISPLAY_STYLE_HEX16);
 
 }
+
+
+
+
+
+void test_apagar_todos_los_leds(void){
+
+    ledsTurnOnAll();
+
+    ledsTurnOffAll();
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x0000)), (UNITY_INT)(UNITY_INT16)((puerto_virtual)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(76), UNITY_DISPLAY_STYLE_HEX16);
+
+}
