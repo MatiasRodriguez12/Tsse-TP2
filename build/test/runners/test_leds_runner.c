@@ -84,12 +84,12 @@ int main(void)
   UnityBegin("test_leds.c");
   run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 19);
   run_test(test_prendo_un_led, "test_prendo_un_led", 26);
-  run_test(test_prender_y_apagar_led, "test_prender_y_apagar_led", 33);
-  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 41);
-  run_test(test_prender_y_consultar_estado_led, "test_prender_y_consultar_estado_led", 50);
-  run_test(test_apagar_y_consultar_estado_led, "test_apagar_y_consultar_estado_led", 58);
-  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 67);
-  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 73);
+  run_test(test_prender_y_apagar_led, "test_prender_y_apagar_led", 32);
+  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 39);
+  run_test(test_prender_y_consultar_estado_led, "test_prender_y_consultar_estado_led", 48);
+  run_test(test_apagar_y_consultar_estado_led, "test_apagar_y_consultar_estado_led", 55);
+  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 63);
+  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 69);
 
   return UnityEnd();
 }

@@ -24,14 +24,12 @@ void test_todos_los_leds_inician_apagados(void){
 
 // Con todos los leds apagados, prendo el led 2, verifico que se el bit 1 vale 1.
 void test_prendo_un_led(void){
-
     ledsTurnOnSingle(2);
     TEST_ASSERT_EQUAL_HEX16(0x0002,puerto_virtual);
 }
 
 // Con el led 2 prendido, apago el led 2, verifico que se enciende el bit 1 vale 0.
 void test_prender_y_apagar_led(void){
-
     ledsTurnOnSingle(2);
     ledsTurnOffSingle(2);
     TEST_ASSERT_EQUAL_HEX16(0x00000,puerto_virtual);
@@ -48,7 +46,6 @@ void test_prender_y_apagar_varios_leds(void){
 
 // Prendo un led, consulto el estado y tiene que estar prendido.
 void test_prender_y_consultar_estado_led(void){
-    
     ledsTurnOnSingle(5);
     bool state_led=isLedTurnOn(5);
     TEST_ASSERT_TRUE(state_led);
@@ -56,7 +53,6 @@ void test_prender_y_consultar_estado_led(void){
 
 // Apago un led, consulto el estado y tiene que estar apagado.
 void test_apagar_y_consultar_estado_led(void){
-    
     ledsTurnOnSingle(5);
     ledsTurnOffSingle(5);
     bool state_led=isLedTurnOn(5);
