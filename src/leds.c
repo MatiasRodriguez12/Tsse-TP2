@@ -1,10 +1,12 @@
 #include "leds.h"
 static uint16_t* puerto_virtual;
 
-#define INDEX_OFFSET 1
-#define FIRST_BIT 1
-#define ALL_LEDS_OFF 0x0000
-#define ALL_LEDS_ON 0xFFFF
+#define INDEX_OFFSET    1
+#define FIRST_BIT       1
+#define ALL_LEDS_OFF    0x0000
+#define ALL_LEDS_ON     0xFFFF
+#define LED_ON          1
+#define LED_OFF         0
 
 uint16_t indexToMask(uint8_t led){
     return(FIRST_BIT<<(led-INDEX_OFFSET));
@@ -25,7 +27,7 @@ void ledsTurnOffSingle(int led){
 
 bool isLedTurnOn(int led){
     bool state;
-    if ((FIRST_BIT & (*puerto_virtual>>(led-1)))==1){
+    if ((FIRST_BIT & (*puerto_virtual>>(led-INDEX_OFFSET)))==LED_ON){
         state=true;
     }
     else{
