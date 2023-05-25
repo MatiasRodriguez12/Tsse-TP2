@@ -47,16 +47,13 @@ void test_prender_y_apagar_varios_leds(void){
 // Prendo un led, consulto el estado y tiene que estar prendido.
 void test_prender_y_consultar_estado_led(void){
     ledsTurnOnSingle(5);
-    bool state_led=isLedTurnOn(5);
-    TEST_ASSERT_TRUE(state_led);
+    TEST_ASSERT_TRUE(isLedTurnOn(5));
 }
 
 // Apago un led, consulto el estado y tiene que estar apagado.
 void test_apagar_y_consultar_estado_led(void){
-    ledsTurnOnSingle(5);
     ledsTurnOffSingle(5);
-    bool state_led=isLedTurnOn(5);
-    TEST_ASSERT_FALSE(state_led);
+    TEST_ASSERT_FALSE(isLedTurnOn(5));
 }
 
 // Con todos los leds apagados, prendo todos los leds y verifico que se encienden.   
